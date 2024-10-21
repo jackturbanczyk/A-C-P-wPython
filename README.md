@@ -1,20 +1,34 @@
-# A-C-P-wPython
+# Git Automation with Aliases
 
-# Aliases
+This project provides a Python script (`add-commit-push.py`) to automate common Git commands (add, commit, and push).
 
-To simplify working with the `add-commit-push.py` script and navigate to the `sprint-5` folder, use the following aliases:
+## How to Use
 
-1. **Navigate to `sprint-5` folder**:
+1. **Run the script**:
+
     ```bash
-    alias g5='cd C:\Users\bob10\classes\intro-cs\sprint-5'
+    python add-commit-push.py /path/to/your/project -m "Your commit message"
     ```
 
-2. **Run the `add-commit-push.py` script**:
+    If no commit message is provided, it defaults to `"Auto commit"`:
+
     ```bash
-    alias acp='python /path/to/add-commit-push.py'
+    python add-commit-push.py /path/to/your/project
     ```
 
-Replace `/path/to/` with the actual path to the respective folder or script. After adding these aliases to your shell configuration (e.g., `.bashrc`, `.zshrc`), you can run the following:
+2. **Use the force flag** (`-f`) to skip confirmation:
 
-- To navigate to `sprint-5`, type `g5`.
-- To run the `add-commit-push.py` script, type `acp /path/to/your/project -m "Your commit message"`.
+    ```bash
+    python add-commit-push.py /path/to/your/project -m "Your commit message" -f
+    ```
+
+## Aliases
+
+To simplify usage, you can set up the following aliases in your shell configuration file (e.g., `.bashrc`, `.zshrc`):
+
+```bash
+# Alias for navigating to the sprint-5 folder
+alias g5='cd /path/to/your/sprint-5/folder'
+
+# Alias for running the add-commit-push.py script from any directory
+alias acp='python /path/to/add-commit-push.py'
