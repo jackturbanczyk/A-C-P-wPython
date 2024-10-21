@@ -6,7 +6,7 @@ To simplify working with the `add-commit-push.py` script and navigate to the `sp
 
 1. **Navigate to `sprint-5` folder**:
     ```bash
-    alias g5='cd /path/to/sprint-5'
+    alias g5='cd C:\Users\bob10\classes\intro-cs\sprint-5'
     ```
 
 2. **Run the `add-commit-push.py` script**:
