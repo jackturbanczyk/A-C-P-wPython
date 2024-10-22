@@ -6,7 +6,6 @@ import subprocess
 import argparse
 
 def run_command(command: list):
-    """Prints, executes, and displays the result of a command."""
     print(f"Executing: {' '.join(command)}\n")
     result = subprocess.run(command, text=True, capture_output=True)
     print(result.stdout)
@@ -15,7 +14,6 @@ def run_command(command: list):
         sys.exit(1)
 
 def change_directory(path: str):
-    """Change the current working directory to the specified path."""
     try:
         os.chdir(path)
         print(f"Changed directory to {path}\n")
@@ -24,16 +22,13 @@ def change_directory(path: str):
         sys.exit(1)
 
 def git_status():
-    """Display the current git status."""
     print("git status:\n")
     run_command(["git", "status"])
 
 def git_add():
-    """Stage all changes."""
     print("Queued command: git add .\n")
 
 def git_commit(message: str):
-    """Commit staged changes with the given message."""
     print(f"Queued command: git commit -m '{message}'\n")
 
 def git_push():
@@ -48,7 +43,7 @@ def confirm_execution():
         sys.exit(0)
 
 def main():
-    """Main function to handle git automation."""
+    """Main function"""
     parser = argparse.ArgumentParser(description="Automate git add, commit, and push.")
     parser.add_argument("-m", "--message", type=str, default="Auto commit",
                         help="Commit message. Defaults to 'Auto commit'.")
@@ -68,11 +63,9 @@ def main():
     git_commit(args.message)
     git_push()
 
-    # If force flag is not provided, ask for confirmation
     if not args.force:
         confirm_execution()
 
-    # Execute commands
     print("Staging changes...\n")
     run_command(["git", "add", "."])
 
