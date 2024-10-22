@@ -1,3 +1,9 @@
+# Add, Commit, Push Project 
+
+**Project by: Jack Urbanczyk**
+
+Credits to chat GPT for outlines, then W3C for help with minor edits.  
+
 # Git Automation with Aliases
 
 This project provides a Python script (`add-commit-push.py`) to automate common Git commands (add, commit, and push).
